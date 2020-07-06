@@ -129,6 +129,12 @@ protected:
 
     //!\brief The complement table.
     static const std::array<dna4, alphabet_size> complement_table;
+
+public:
+    constexpr dna4 complement() const noexcept
+    {
+        return dna4{}.assign_rank(3 - to_rank());
+    }
 };
 
 // ------------------------------------------------------------------
